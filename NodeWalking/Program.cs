@@ -31,19 +31,19 @@ namespace NodeWalking
             }
         }
         #region _with_class
-        public double GreatestDistance (Node<Point>chains)
+        public static double GreatestDistance (Node<Point>chains)
         {
             //input => Gets a chain of points
             // output => the greatest distance between all points.
             throw new NotImplementedException();
         }
-        public Point GetTheHighestPoint (Node<Point> chain)
+        public static Point GetTheHighestPoint (Node<Point> chain)
         {
             //input => Gets a chain of points
             // output => the heighest point (the Y coordinate)
             throw new NotImplementedException();
         }
-        public bool HasPoint (Node<Point> chain, Point p)
+        public static bool HasPoint (Node<Point> chain, Point p)
         {
             // input => Gets a chain of points and a single point
             //output =>true if a similar point exists in the chain. false if not
