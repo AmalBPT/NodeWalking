@@ -9,6 +9,7 @@ namespace NodeWalking
 {
     class ChainGenerator
     {
+       
         private static Random rnd = new Random();
         public static Node<int> GetChain (int size, int start = 1, int end = 30)
         {
@@ -47,5 +48,29 @@ namespace NodeWalking
             }
             return p;
         }
+        public static Node<Range> GenerateRangeList()
+        {
+            int[] numbers = { 3, 5, 20, 30, 1, 4, 7, 21, 27, 29 };
+            Node<Range> dummy = new Node<Range>(new Range(-1));
+            Node<Range> last = dummy;
+            for (int i = 0; i<numbers.Length; i+=2)
+            {
+                last.SetNext(new Node<Range>(new Range(numbers[i], numbers[i + 1])));
+                last = last.GetNext();
+            }
+            return dummy.GetNext();
+        }
+        public static void Print (Node<Range> head)
+        {
+            Console.Write("[" + head.GetValue().ToString());
+            head = head.GetNext();
+            while (head!=null)
+            {
+                Console.Write($",  {head.GetValue().ToString()}");
+                head = head.GetNext();
+            }
+            Console.WriteLine("]");
+        }
+
     }
 }
